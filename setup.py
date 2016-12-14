@@ -11,8 +11,6 @@ setup(name='python_image_utils',
           'Pillow',
       ],
       dependency_links=[
-        'git+git://github.com/lynzt/python_utils.git',
         'git+git://github.com/lynzt/python_file_utils.git',
-        'git+git://github.com/lynzt/python_file_download_helper.git',
       ]
     )

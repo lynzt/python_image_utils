@@ -1,6 +1,5 @@
 import unittest
 from file_utils import file_utils
-
 from image_utils import image_utils
 
 class UtilsTests(unittest.TestCase):
