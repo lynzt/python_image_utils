@@ -8,9 +8,9 @@ setup(name='python_image_utils',
     url='https://github.com/lynzt/python_image_utils',
     packages=['image_utils'],
     install_requires=[
-          'Pillow',
-      ],
-      dependency_links=[
+        'Pillow',
+    ],
+    dependency_links=[
         'git+git://github.com/lynzt/python_file_utils.git',
-      ]
+    ]
     )

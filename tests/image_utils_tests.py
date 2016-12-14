@@ -24,4 +24,12 @@ class UtilsTests(unittest.TestCase):
         self.assertLess(file_utils.get_file_size(new_image), image_file_size)
         file_utils.remove_file(new_image)
 
+        image = 'tests/images/cabelas-inc.png'
+        new_image = 'tests/images/cabelas-inc-copy.png'
+        file_utils.copy_file(image, new_image)
+        image_file_size = file_utils.get_file_size(new_image)
+        image_utils.compress_image(new_image, new_image, 40)
+        self.assertLess(file_utils.get_file_size(new_image), image_file_size)
+        file_utils.remove_file(new_image)
+
 # IMAGE_PATH=/Library/WebServer/Documents/python_image_utils/tests/images/ python -m unittest discover -s tests -p "*_tests.py"
