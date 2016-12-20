@@ -1,6 +1,5 @@
 from setuptools import setup, find_packages
 
-print find_packages()
 setup(name='python_image_utils',
     version='0.0.1',
     description='functions for pulling stakeholder info from websites',
@@ -13,4 +12,4 @@ setup(name='python_image_utils',
     dependency_links=[
         'git+git://github.com/lynzt/python_file_utils.git',
     ]
-    )
+)
