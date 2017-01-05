@@ -5,6 +5,9 @@ from PIL import Image
 
 def convert_image(orig_image, new_image, image_type):
     image = Image.open(orig_image)
+    if image.mode != 'RGB':
+        image = image.convert('RGB')
+
     image.save(new_image, image_type)
 
 def compress_image(image, new_image, quality):

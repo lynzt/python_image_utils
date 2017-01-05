@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='python_image_utils',
-    version='0.0.1',
+    version='0.0.2',
     description='functions for pulling stakeholder info from websites',
     author='lynzt',
     url='https://github.com/lynzt/python_image_utils',
