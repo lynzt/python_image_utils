@@ -17,10 +17,10 @@ class UtilsTests(unittest.TestCase):
         file_utils.remove_file(new_image)
 
         orig_image = 'tests/images/jerry-e-sheridan.gif'
-        new_image = 'tests/images/jerry-e-sheridan.gif.jpeg'
+        new_image = 'tests/images/jerry-e-sheridan.jpeg'
         image_utils.convert_image(orig_image, new_image, 'JPEG')
         self.assertTrue(file_utils.check_file_exists(new_image))
-        file_utils.remove_file(new_image)
+        # file_utils.remove_file(new_image)
 
     def test_compress_image(self):
         image = 'tests/images/cabelas-inc.png'
