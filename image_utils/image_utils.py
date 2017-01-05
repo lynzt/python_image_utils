@@ -4,6 +4,7 @@ from PIL import Image
 # helpers for image manipulation
 
 def convert_image(orig_image, new_image, image_type):
+    print ("convert_image...")
     image = Image.open(orig_image)
     if image.mode != 'RGB':
         print ("rgb... stuff")
