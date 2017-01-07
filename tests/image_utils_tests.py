@@ -20,7 +20,7 @@ class UtilsTests(unittest.TestCase):
         new_image = 'tests/images/jerry-e-sheridan.jpeg'
         image_utils.convert_image(orig_image, new_image, 'JPEG')
         self.assertTrue(file_utils.check_file_exists(new_image))
-        # file_utils.remove_file(new_image)
+        file_utils.remove_file(new_image)
 
     def test_compress_image(self):
         image = 'tests/images/cabelas-inc.png'
@@ -37,5 +37,26 @@ class UtilsTests(unittest.TestCase):
         image_utils.compress_image(new_image, new_image, 40)
         self.assertLess(file_utils.get_file_size(new_image), image_file_size)
         file_utils.remove_file(new_image)
+
+    def test_get_image_size(self):
+        image = 'tests/images/cabelas-inc.png'
+        width, height = image_utils.get_image_size(image)
+        self.assertEqual(width, 250)
+        self.assertEqual(height, 150)
+
+    def test_resize_image_scale(self):
+        filename = 'tests/images/cabelas-inc.png'
+        new_filename = 'tests/images/cabelas-inc-resize.png'
+        scale = 16
+        image_utils.resize_image_scale(filename, new_filename, scale)
+        width, height = image_utils.get_image_size(filename)
+        self.assertEqual(width, 250)
+        self.assertEqual(height, 150)
+        width, height = image_utils.get_image_size(new_filename)
+        self.assertEqual(width, 16)
+        self.assertEqual(height, 9)
+        file_utils.remove_file(new_filename)
+
+
 
 # IMAGE_PATH=/Library/WebServer/Documents/python_image_utils/tests/images/ python -m unittest discover -s tests -p "*_tests.py"
